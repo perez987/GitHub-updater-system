@@ -1,8 +1,10 @@
 # GitHub Updater System
 
+<a href="README.md">
+    <img src="https://img.shields.io/badge/README-Inglés-blue" alt=“CHANGELOG releases”></a><br>
 ## Descripción general
 
-Un comprobador de actualizaciones ligero e integrado diseñado para aplicaciones SwiftUI publicadas en GitHub, que consulta la API de versiones de GitHub para detectar versiones más recientes de la aplicación. No requiere dependencias de terceros (no se necesita Sparkle ni ningún framework similar).
+Comprobador de actualizaciones ligero e integrado diseñado para aplicaciones SwiftUI publicadas en GitHub, que consulta la API de `releases` de GitHub para detectar versiones más recientes de la aplicación. No tiene dependencias de terceros (no se necesita Sparkle ni ningún framework similar).
 
 ## Cómo comprobar actualizaciones
 
@@ -14,7 +16,7 @@ La misma comprobación está disponible de forma programática para verificacion
 
 | Situación | Título | Mensaje |
 |-----------|--------|---------|
-| Hay una versión más reciente disponible | *Actualización disponible* | "APP X.X.X ya está disponible. ¿Desea descargarla?" |
+| Hay una versión más reciente disponible | *Actualización disponible* | "APP X.X.X ya está disponible. ¿Deseas descargarla?" |
 | Ya tienes la versión más reciente (solo si el usuario lo inicia) | *¡Estás al día!* | "APP X.X.X es actualmente la versión más reciente." |
 | Error de red | *Error al comprobar actualizaciones* | "No se puede conectar al servidor de actualizaciones. Por favor, comprueba tu conexión a internet." |
 | Error de API / análisis | *Error al comprobar actualizaciones* | "No se pudo obtener la información de actualización." |
@@ -25,8 +27,8 @@ Cuando hay una actualización disponible, al hacer clic en **Descargar actualiza
 
 El comprobador adapta su llamada a la API de GitHub según el número de versión principal de la aplicación en ejecución.
 
-- Endpoint de la API utilizado: `/repos/.../releases/latest`
-- Utiliza el endpoint estándar de la *última versión*.
+- `Endpoint` de la API utilizado: `/repos/.../releases/latest`
+- Utiliza el `endpoint` estándar de la *última versión*.
 
 Este enrutamiento garantiza que los usuarios siempre estén siguiendo la versión más reciente de forma global.
 
@@ -36,7 +38,7 @@ Las versiones se comparan componente a componente después de eliminar la `v` in
 
 ## Detalles técnicos
 
-El actualizador está implementado como un singleton en `GitHubUpdateChecker.swift`:
+El actualizador está implementado como una clase de instancia única en `GitHubUpdateChecker.swift`:
 
 ```swift
 GitHubUpdateChecker.shared.checkForUpdates(userInitiated: true)
@@ -105,7 +107,7 @@ No es obligatorio, pero se recomienda que las propiedades `BundleShortVersionStr
 
 ### Menú de comandos
 
-El menú que comprueba las actualizaciones es fácil de implementar. Se añade un botón de menú con cuatro componentes al archivo de la aplicación, justo después de `.appInfo` ("Acerca de esta aplicación"):
+El menú que comprueba las actualizaciones es fácil de implementar. Se añade un botón de menú con cuatro componentes, justo después de `.appInfo` ("Acerca de esta aplicación"):
 
 - Cadena "Buscar actualizaciones"
 - Imagen "arrow.triangle.2.circlepath"

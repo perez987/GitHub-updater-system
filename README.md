@@ -1,5 +1,8 @@
 # GitHub Updater System
 
+<a href="README-es.md">
+    <img src="https://img.shields.io/badge/Spanish-README-blue" alt=“CHANGELOG releases”></a><br>
+
 ## Overview
 
 A lightweight, integrated update checker designed for SwiftUI applications published on GitHub, which queries the GitHub versioning API to detect newer versions of the application. It requires no third-party dependencies (no Sparkle or similar framework required).
