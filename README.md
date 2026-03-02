@@ -86,7 +86,7 @@ You need to check these two properties, replacing them with the owner's name and
     private let repo = "GitHub-repo"
 ```
 
-The rest of the file can be used as is. You can view the contents of this file in [Files/Updater/GitHubUpdateChecker.swift](Files/Updater/GitHubUpdateChecker.html).
+The rest of the file can be used as is. You can view the contents of this file in [Files/Updater/GitHubUpdateChecker.swift](Files/Updater/GitHubUpdateChecker.swift)
 
 ### Language files
 
