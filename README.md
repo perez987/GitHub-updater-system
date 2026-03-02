@@ -1,4 +1,4 @@
-# Updater System
+# GitHub Updater System
 
 ## Overview
 
