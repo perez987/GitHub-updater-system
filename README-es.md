@@ -2,6 +2,7 @@
 
 <a href="README.md">
     <img src="https://img.shields.io/badge/README-Inglés-blue" alt=“CHANGELOG releases”></a><br>
+    
 ## Descripción general
 
 Comprobador de actualizaciones ligero e integrado diseñado para aplicaciones SwiftUI publicadas en GitHub, que consulta la API de `releases` de GitHub para detectar versiones más recientes de la aplicación. No tiene dependencias de terceros (no se necesita Sparkle ni ningún framework similar).
