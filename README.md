@@ -7,6 +7,10 @@
 
 A lightweight, integrated update checker designed for SwiftUI applications published on GitHub, which queries the GitHub versioning API to detect newer versions of the application. It requires no third-party dependencies (no Sparkle or similar framework required).
 
+| Up-to-date | Update available |
+| --- | --- |
+| ![](Images/Up-to-date.png) | ![](Images/Update-available.png) |
+
 ## How to Check for Updates
 
 Open the **About This Application** menu and click **Check for Updates…** (or press `⌘ U`). The Application contacts GitHub and, depending on the result, shows one of the alerts described below.
