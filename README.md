@@ -72,3 +72,56 @@ All user-facing strings are fully localized through `Localizable.strings`. The r
 | `UpdateCheckError` | Update Check Failed |
 | `UpdateCheckFailed` | Failed to retrieve update information. |
 | `UpdateCheckNetworkError` | Unable to connect to the update server. Please check your internet connection. |
+
+## Implementation
+
+### GitHubUpdateChecker.swift
+
+This is the only required code file. It's a Singleton pattern that guarantees a single instance of a class will exist throughout the application's execution, providing a global access point. It must be added to the Xcode project.
+
+You need to check these two properties, replacing them with the owner's name and the name of the GitHub repository:
+
+```swift
+    private let owner = "GH-owner"
+    private let repo = "GitHub-repo"
+```
+
+The rest of the file can be used as is. You can view the contents of this file in [Files/Updater/GitHubUpdateChecker.swift](Files/Updater/GitHubUpdateChecker.html).
+
+### Language files
+
+The strings used in the update process are localized and translated into 5 languages: English, Spanish, French, German, and Italian. They are available in `Files/Resources`.
+
+### Info.plist
+
+It's not required, but it is recommended to have the `BundleShortVersionString` and `BundleVersion` properties in the Info.plist file not hardcoded, but read from the project configuration:
+
+```xml
+<key>CFBundleShortVersionString</key>
+<string>$(MARKETING_VERSION)</string>
+<key>CFBundleVersion</key>
+<string>$(CURRENT_PROJECT_VERSION)</string>
+```
+
+### Command menu
+
+The menu that checks for updates is easy to implement. A menu button with four components is added to the application file, just after `.appinfo` ("About This Application"):
+
+- String "Check for Updates"
+- Image "arrow.triangle.2.circlepath"
+- Link to `checkForUpdates` function
+- Keyboard shortcut (`⌘ + U`).
+
+```swift
+        .commands {
+            CommandGroup(after: .appInfo) {
+                // Settings to check for updates
+                Button(NSLocalizedString("Check for Updates…", comment: "Menu item to check for app updates"),
+                       systemImage: "arrow.triangle.2.circlepath") {
+                    GitHubUpdateChecker.shared.checkForUpdates(userInitiated: true)
+                }
+                       .keyboardShortcut("u", modifiers: [.command])
+            }            
+        }
+```
+
