@@ -1,0 +1,11 @@
+/* Update Check */
+"Check for Updates…" = "Check for Updates…";
+"UpdateAvailable" = "Update Available";
+"UpdateAvailableInfo" = "APP %@ is now available. Would you like to download it?";
+"DownloadUpdate" = "Download Update";
+"UpdateLater" = "Later";
+"UpToDate" = "You're up to date!";
+"UpToDateInfo" = "APP %@ is currently the latest version.";
+"UpdateCheckError" = "Update Check Failed";
+"UpdateCheckFailed" = "Failed to retrieve update information.";
+"UpdateCheckNetworkError" = "Unable to connect to the update server. Please check your internet connection.";
