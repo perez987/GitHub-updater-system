@@ -7,6 +7,16 @@
 
 Comprobador de actualizaciones ligero e integrado diseñado para aplicaciones SwiftUI publicadas en GitHub, que consulta la API de `releases` de GitHub para detectar versiones más recientes de la aplicación. No tiene dependencias de terceros (no se necesita Sparkle ni ningún framework similar).
 
+## Comparación con Sparkle
+
+Sparkle es un `framework` ampliamente utilizado para actualizar aplicaciones cuando versiones nuevas están disponibles. Es conocido por los usuarios de macOS deade hace bastantes años. `Free` y `open-source`, tiene la funcionalidad adecuada para la finalidad buscada. Probado por muchos miles de usuarios.
+
+Pero tiene un inconveniente: configurarlo en aplicaciones Swift que funcionan en modo `sandboxed`. En teoría su configuración es sencilla pero, en la práctica, conseguir que notificación, descarga e instalación de versiones nuevas funcionen como deben puede llegar a ser una pesadilla. Hay ocasiones en que se siguen las instrucciones al pie de la letra, se prueba y comprueba todo más de una vez y, a pesar de ello, falla el proceso de actualización. Encontrar la causa del fallo no siempre es fácil.
+
+[Aquí](https://github.com/perez987/How-to-Sparkle-in-Xcode-project/blob/main/README-ES.md) tienes unas instrucciones detalladas para configurar Sparkle en un proyecto Swift de Xcode. Hay muchos otros lugares donde consultarlo, incluyendo la documentación de Sparkle.
+
+Este Sistema de Actualizaciones de GitHub, en cambio, destaca por su poca complejidad y la facilidad para dejar bien ajustada la notificación de actualizaciones nuevas. Que la aplicación esté `sandboxed` o no carece de importancia. Sólo se necesita un archivo Swift y unas pocas líneas de código en el archivo de la aplicación. La seguridad se mantiene con mucha menos complejidad, ya que el usuario es llevado a la página oficial de la nueva versión y no se guardan datos entre ejecuciones.
+
 ## Cómo comprobar actualizaciones
 
 Abre el menú **Acerca de esta aplicación** y haz clic en **Buscar actualizaciones…** (o pulsa `⌘ U`). La aplicación contacta con GitHub y, según el resultado, muestra una de las alertas descritas a continuación.

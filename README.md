@@ -11,6 +11,16 @@ A lightweight, integrated update checker designed for SwiftUI applications publi
 | --- | --- |
 | ![](Images/Up-to-date.png) | ![](Images/Update-available.png) |
 
+## Comparison with Sparkle
+
+Sparkle is a widely used framework for updating applications when new versions are available. It has been known to macOS users for many years. Free and open-source, it has the right functionality for its intended purpose. Tested by many thousands of users.
+
+However, it has one drawback: configuring it in Swift applications that run in sandboxed mode. In theory, its configuration is simple, but in practice, getting notifications, downloads, and installations of new versions to work as they should can be a nightmare. Sometimes, even after following the instructions to the letter, testing and verifying everything more than once, the update process still fails. Finding the cause of the failure is not always easy.
+
+[Here](https://github.com/perez987/How-to-Sparkle-in-Xcode-project) are detailed instructions for configuring Sparkle in an Xcode Swift project. There are many other places to consult, including the Sparkle documentation.
+
+GitHub's Update System, on the other hand, stands out for its simplicity and the ease with which you can configure notifications for new updates. Whether the application is sandboxed or not is irrelevant. All that's needed is a Swift file and a few lines of code in the application's file. Security is maintained with much less complexity, as the user is taken to the official page for the new version, and no data is saved between runs.
+
 ## How to Check for Updates
 
 Open the **About This Application** menu and click **Check for Updates…** (or press `⌘ U`). The Application contacts GitHub and, depending on the result, shows one of the alerts described below.
